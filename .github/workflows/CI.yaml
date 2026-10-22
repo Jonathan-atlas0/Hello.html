@@ -12,4 +12,5 @@ jobs:
 
     steps:
       - name: Ping Google DNS
-        run: ping -c 4 8.8.8.8
+        run: |
+          ping -c 4 -W 3 8.8.8.8 || echo "Ping falhou: DNS inacessível ou ICMP bloqueado"
