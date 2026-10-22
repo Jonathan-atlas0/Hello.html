@@ -1,5 +1,5 @@
 
-name: Ping DNS Google
+name: Test Google DNS
 
 on:
   push:
@@ -7,10 +7,9 @@ on:
       - main
 
 jobs:
-  ping:
+  dns-test:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Ping Google DNS
-        run: |
-          ping -c 4 -W 3 8.8.8.8 || echo "Ping falhou: DNS inacessível ou ICMP bloqueado"
+      - name: Test DNS resolution
+        run: nslookup google.com 8.8.8.8
