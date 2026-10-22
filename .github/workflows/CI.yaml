@@ -17,6 +17,14 @@ jobs:
 
       - name: Executar build
         run: echo "Build executado com sucesso!"
+ping-test:
+    name: Ping Test
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Executar ping test
+        run: |
+          ping -c 5 8.8.8.8 && echo "Ping test executado com sucesso!" || echo "Ping test falhou!"       
 
   test:
     name: Test
