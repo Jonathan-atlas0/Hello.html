@@ -1,5 +1,5 @@
 
-name: Test Google DNS
+name: Ping Google
 
 on:
   push:
@@ -7,9 +7,8 @@ on:
       - main
 
 jobs:
-  dns-test:
+  ping:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Test DNS resolution
-        run: nslookup google.com 8.8.8.8
+      - name: Ping Google DNS
+        run: ping -c 4 8.8.8.8
